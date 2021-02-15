@@ -13,11 +13,11 @@ spring:
       base-url: http://127.0.0.1:8082/
       sender:
         type: rabbit
-      rabbitmq:
-        host: 39.108.60.174
-        port: 5672
-        username: rabbit
-        password: s3crEt
+    rabbitmq:
+      host: 39.108.60.174
+      port: 5672
+      username: rabbit
+      password: s3crEt
 
 zuul:
   host:
