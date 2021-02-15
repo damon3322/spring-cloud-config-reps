@@ -101,18 +101,20 @@ zuul:
   add-proxy-headers: true
   add-host-header: true
 
-security:
-  oauth2:
-    client:
-      clientId: paascloud-client-gateway
-      clientSecret: paascloudClientSecret
-      access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
-      user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
-    resource:
-      user-info-uri: http://paascloud-gateway:7979/uac/user
-      prefer-token-info: false
-      jwt:
-        key-uri: http://paascloud-provider-uac:8000/oauth/token_key
+paascloud:
+  enableSqlLogInterceptor: false
+  security:
+    oauth2:
+      client:
+        clientId: paascloud-client-gateway
+        clientSecret: paascloudClientSecret
+        access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
+        user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
+      resource:
+        user-info-uri: http://paascloud-gateway:7979/uac/user
+        prefer-token-info: false
+        jwt:
+          key-uri: http://paascloud-provider-uac:8000/oauth/token_key
 
 proxy:
   auth:
@@ -120,8 +122,7 @@ proxy:
       uac-route: oauth2
       mdc-route: oauth2
 
-paascloud:
-  enableSqlLogInterceptor: false
+  
 # swagger butler配置
 swagger.butler:
   api-docs-path: v2/api-docs
